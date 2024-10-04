@@ -66,17 +66,8 @@ class CustomDialog extends StatelessWidget {
           onPressed: () {
             if (controllers.every((controller) => controller.text.isNotEmpty)) {
               if (isSalesInvoice || title.contains("Return")) {
-                if (isSalesInvoice) {
-                  controller.addSalesInvoice(
-                    controllers[0].text,
-                    items,
-                  );
-                } else {
-                  controller.addSalesReturn(
-                    controllers[0].text,
-                    items,
-                  );
-                }
+                controller.addInvoiceOrReturn(controllers[0].text, items,
+                    isReturn: isSalesInvoice);
               } else {
                 controller.addOpeningStock(
                   controllers[0].text,
