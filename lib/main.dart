@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:inventory_management/screens/home_screen.dart';
-import 'package:inventory_management/screens/input_screen.dart';
 
 void main() {
   runApp(InventoryManagementApp());
