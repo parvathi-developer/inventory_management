@@ -82,12 +82,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inventory Management'),
+        title: const Text('Inventory Management'),
         centerTitle: true,
       ),
       body: Container(
         color: Colors.grey[100], // Set a light background color
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Center(
           child: SingleChildScrollView(
             // Allow scrolling if content overflows
@@ -102,25 +102,25 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         ElevatedButton.icon(
-                          onPressed: showAddOpeningStockDialog,
-                          icon: Icon(Icons.add),
-                          label: Text('Add Opening Stock'),
+                          onPressed: controller.showAddOpeningStockDialog,
+                          icon: const Icon(Icons.add),
+                          label: const Text('Add Opening Stock'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         ElevatedButton.icon(
-                          onPressed: showAddSalesInvoiceDialog,
+                          onPressed: controller.showAddSalesInvoiceDialog,
                           icon: Icon(Icons.attach_money),
                           label: Text('Add Sales Invoice'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         ElevatedButton.icon(
-                          onPressed: showAddSalesReturnDialog,
+                          onPressed: controller.showAddSalesReturnDialog,
                           icon: Icon(Icons.undo),
                           label: Text('Add Sales Return'),
                           style: ElevatedButton.styleFrom(
@@ -131,36 +131,36 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Obx(() => Text(
                       'Opening Stock Count: ${controller.openingStock.length}',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     )),
                 Obx(() => Text(
                       'Sales Invoice Count: ${controller.totalSalesCount}',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     )),
                 Obx(() => Text(
                       'Sales Return Count: ${controller.totalReturnCount}',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     )),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     Get.to(() => StockDisplayScreen(controller.openingStock));
                   },
-                  child: Text('Show Ending Stock'),
+                  child: const Text('Show Ending Stock'),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
                     Get.to(
                         () => InvoiceScreen(invoices: controller.invoiceModel));
                   },
-                  child: Text('Show Sales Stock'),
+                  child: const Text('Show Sales Stock'),
                 ),
               ],
             ),
