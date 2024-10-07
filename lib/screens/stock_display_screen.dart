@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inventory_management/models/invoice_models.dart';
 import 'package:inventory_management/models/stock_models.dart';
 
 class StockDisplayScreen extends StatelessWidget {
